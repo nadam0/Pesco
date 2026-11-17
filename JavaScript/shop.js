@@ -37,8 +37,14 @@ const bagIcons = document.querySelectorAll(".process .fa-bag-shopping, .mobile-b
 const sortSelect = document.querySelector(".sort-select");
 
 
+const imgBase = location.pathname.includes("/HTML/") ? "../" : "./";
+
+function imgSrc(path) {
+    return imgBase + path.replace(/^(\.\.?\/)/, "");
+}
+
+
 function displayProducts(productsArray) {
-    // home و feature: نجمع الـ HTML لكل قسم ونحطه مرة واحدة
     const sections = {};
     productsArray.forEach(function(product) {
         if (product.page !== "shop") {
@@ -71,7 +77,7 @@ function createProductCard(product) {
         <div class="cart">
             <div class="cart-img-box">
                 <span class="badge">${product.badge}</span>
-                <img src="${product.img}" alt="${product.title}">
+                <img src="${imgSrc(product.img)}" alt="${product.title}">
                 <button class="add-to-cart-btn" data-id="${product.id}">
                     <i class="fa-solid fa-cart-arrow-down"></i>
                     <span>Add To Cart</span>
@@ -209,7 +215,7 @@ function updateCart() {
         if (product) {
             html += `
                 <div class="cart-item">
-                    <img src="${product.img}" alt="${product.title}">
+                    <img src="${imgSrc(product.img)}" alt="${product.title}">
                     <div class="cart-item-info">
                         <h4>${product.title}</h4>
                         <p>$${product.price.toFixed(2)}</p>
