@@ -142,11 +142,15 @@ if (sortSelect) {
 function openCart() {
     cartSidebar.classList.add("open");
     cartOverlay.classList.add("open");
+    document.documentElement.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
 }
 
 function closeCart() {
     cartSidebar.classList.remove("open");
     cartOverlay.classList.remove("open");
+    document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
 }
 
 bagIcons.forEach(function(icon) {
@@ -276,3 +280,5 @@ document.addEventListener("click", function(e) {
         }
     }
 });
+
+
