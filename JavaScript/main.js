@@ -1,14 +1,25 @@
 document.addEventListener('DOMContentLoaded', function(){
 $('.main-slider').slick({
-    dots: true,          
-    arrows: false,     
+    dots: true,
+    arrows: false,
     infinite: true,
     speed: 600,
     vertical: true,
-    verticalSwiping: true,
-    autoplay: false,    
-    pauseOnHover: false
-    });
+    verticalSwiping: false,
+    swipe: false,
+    touchMove: false,
+    autoplay: false,
+    pauseOnHover: false,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                vertical: false,
+                swipe: true
+            }
+        }
+    ]
+});
 
 $('.slider').slick({
         speed: 10000,
@@ -73,12 +84,6 @@ $('.feature-slider').slick({
     responsive: [
         {
             breakpoint: 1024,
-            settings: {
-                slidesToShow: 3
-            }
-        },
-        {
-            breakpoint: 768,
             settings: {
                 slidesToShow: 2
             }
