@@ -9,20 +9,20 @@ const products = [
     { id: 8, page: "shop", title: "Elegant silk dress with sequins", price: 34, oldPrice: 67, img: "../images/product-4.png", badge: "80% OFF", reviews: 80 },
     { id: 9, page: "shop", title: "Cashmere v-neck sweater with ribbed cuffs", price: 7, oldPrice: 67, img: "../images/product-5.png", badge: "10% OFF", reviews: 47 },
 
-    { id: 11, page: "home", title: "Lightweight linen summer dress with belt", price: 40, oldPrice: 80, img: "../images/feature-product-1.png", badge: "10% OFF", reviews: 80 },
-    { id: 12, page: "home", title: "Cozy knit sweater with pockets", price: 23, oldPrice: 67, img: "../images/feature-product-2.png", badge: "10% OFF", reviews: 80 },
-    { id: 13, page: "home", title: "Athletic leggings with mesh panels", price: 40, oldPrice: 80, img: "../images/feature-product-3.png", badge: "10% OFF", reviews: 47 },
-    { id: 14, page: "home", title: "Classic leather biker jacket with zippers", price: 23, oldPrice: 67, img: "../images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
-    { id: 15, page: "home", title: "Floral print sundress with adjustable straps", price: 23, oldPrice: 67, img: "../images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
-    { id: 16, page: "home", title: "Relaxed fit denim jeans with distressing", price: 40, oldPrice: 80, img: "../images/feature-product-3.png", badge: "10% OFF", reviews: 47 },
-    { id: 17, page: "home", title: "Cargo shorts with pockets and drawstring", price: 23, oldPrice: 67, img: "../images/feature-product-2.png", badge: "40% OFF", reviews: 47 },
-    { id: 18, page: "home", title: "Elegant silk dress with sequins", price: 40, oldPrice: 67, img: "../images/feature-product-1.png", badge: "80% OFF", reviews: 80 },
+    { id: 11, page: "home", title: "Lightweight linen summer dress with belt", price: 40, oldPrice: 80, img: "./images/feature-product-1.png", badge: "10% OFF", reviews: 80 },
+    { id: 12, page: "home", title: "Cozy knit sweater with pockets", price: 23, oldPrice: 67, img: "./images/feature-product-2.png", badge: "10% OFF", reviews: 80 },
+    { id: 13, page: "home", title: "Athletic leggings with mesh panels", price: 40, oldPrice: 80, img: "./images/feature-product-3.png", badge: "10% OFF", reviews: 47 },
+    { id: 14, page: "home", title: "Classic leather biker jacket with zippers", price: 23, oldPrice: 67, img: "./images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
+    { id: 15, page: "home", title: "Floral print sundress with adjustable straps", price: 23, oldPrice: 67, img: "./images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
+    { id: 16, page: "home", title: "Relaxed fit denim jeans with distressing", price: 40, oldPrice: 80, img: "./images/feature-product-3.png", badge: "10% OFF", reviews: 47 },
+    { id: 17, page: "home", title: "Cargo shorts with pockets and drawstring", price: 23, oldPrice: 67, img: "./images/feature-product-2.png", badge: "40% OFF", reviews: 47 },
+    { id: 18, page: "home", title: "Elegant silk dress with sequins", price: 40, oldPrice: 67, img: "./images/feature-product-1.png", badge: "80% OFF", reviews: 80 },
 
-    { id: 21, page: "feature", title: "Cozy knit sweater with pockets", price: 23, oldPrice: 67, img: "../images/feature-product-1.png", badge: "80% OFF", reviews: 50 },
-    { id: 22, page: "feature", title: "Elegant silk dress with sequins", price: 23, oldPrice: 67, img: "../images/feature-product-2.png", badge: "80% OFF", reviews: 80 },
-    { id: 23, page: "feature", title: "Cargo shorts with pockets and drawstring", price: 23, oldPrice: 67, img: "../images/feature-product-3.png", badge: "40% OFF", reviews: 47 },
-    { id: 24, page: "feature", title: "Athletic leggings with mesh panels", price: 40, oldPrice: 80, img: "../images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
-    { id: 25, page: "feature", title: "Elegant silk dress with sequins", price: 23, oldPrice: 67, img: "../images/feature-product-2.png", badge: "80% OFF", reviews: 80 }
+    { id: 21, page: "feature", title: "Cozy knit sweater with pockets", price: 23, oldPrice: 67, img: "./images/feature-product-1.png", badge: "80% OFF", reviews: 50 },
+    { id: 22, page: "feature", title: "Elegant silk dress with sequins", price: 23, oldPrice: 67, img: "./images/feature-product-2.png", badge: "80% OFF", reviews: 80 },
+    { id: 23, page: "feature", title: "Cargo shorts with pockets and drawstring", price: 23, oldPrice: 67, img: "./images/feature-product-3.png", badge: "40% OFF", reviews: 47 },
+    { id: 24, page: "feature", title: "Athletic leggings with mesh panels", price: 40, oldPrice: 80, img: "./images/feature-product-4.png", badge: "10% OFF", reviews: 47 },
+    { id: 25, page: "feature", title: "Elegant silk dress with sequins", price: 23, oldPrice: 67, img: "./images/feature-product-2.png", badge: "80% OFF", reviews: 80 }
 ];
 
 let cart = JSON.parse(localStorage.getItem("myPescoCart")) || [];
@@ -38,15 +38,22 @@ const sortSelect = document.querySelector(".sort-select");
 
 
 function displayProducts(productsArray) {
+    // home و feature: نجمع الـ HTML لكل قسم ونحطه مرة واحدة
+    const sections = {};
     productsArray.forEach(function(product) {
         if (product.page !== "shop") {
-            const box = document.querySelector(`#${product.page}-products`);
-            if (box && box.innerHTML.trim() === "") {
-                box.innerHTML += createProductCard(product);
-            }
+            sections[product.page] = (sections[product.page] || "") + createProductCard(product);
         }
     });
 
+    Object.keys(sections).forEach(function(page) {
+        const box = document.querySelector(`#${page}-products`);
+        if (box) {
+            box.innerHTML = sections[page];
+        }
+    });
+
+    // shop
     const shopBox = document.querySelector("#shop-products");
     if (shopBox) {
         let shopHtml = "";
@@ -102,7 +109,7 @@ updateCart();
 if (sortSelect) {
     sortSelect.addEventListener("change", function(e) {
         const value = e.target.value;
-        
+
         let sortedProducts = [...products];
 
         if (value === "Price Low To High") {
@@ -111,7 +118,7 @@ if (sortSelect) {
             });
         } else if (value === "Price High To Low") {
             sortedProducts.sort(function(a, b) {
-                return b.price - a.price; 
+                return b.price - a.price;
             });
         } else if (value === "Sort by Newness") {
             sortedProducts.sort(function(a, b) {
@@ -242,7 +249,7 @@ document.addEventListener("click", function(e) {
     const addBtn = e.target.closest(".add-to-cart-btn");
     const increaseBtn = e.target.closest(".increase-btn");
     const decreaseBtn = e.target.closest(".decrease-btn");
-    const removeBtn = e.target.closest.remove ? e.target.closest(".remove-item") : null;
+    const removeBtn = e.target.closest(".remove-item");
 
     if (addBtn) {
         e.preventDefault();
@@ -257,10 +264,9 @@ document.addEventListener("click", function(e) {
         decreaseQty(Number(decreaseBtn.dataset.id));
     }
 
-    if (e.target.closest(".remove-item")) {
-        const btn = e.target.closest(".remove-item");
+    if (removeBtn) {
         if (confirm("Are you sure to delete this product")) {
-            removeFromCart(Number(btn.dataset.id));
+            removeFromCart(Number(removeBtn.dataset.id));
         }
     }
 });
