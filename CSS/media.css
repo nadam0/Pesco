@@ -1,0 +1,789 @@
+
+.mobile-actions{
+    display: none;
+}
+
+@media (max-width: 1050px){
+
+    nav .topNav{
+        background: var(--primary-color);
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    nav .topNav img{
+        height: 45px;
+        width: auto;
+    }
+
+    nav .topNav .search-box,
+    nav .topNav .left,
+    nav .downNav{
+        display: none;
+    }
+
+    .mobile-actions{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mobile-actions button{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-size: 22px;
+        cursor: pointer;
+        color: var(--dark-color);
+    }
+
+    .mobile-bag{
+        background: var(--white-color);
+        border: none;
+    }
+
+    .mobile-toggle{
+        background: transparent;
+        border: 1px solid var(--dark-color);
+    }
+
+    nav{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+}
+
+
+
+@media (max-width: 991px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header .hero-row{
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px 6% 60px;
+    }
+
+    header .best{
+        align-items: center;
+        text-align: center;
+    }
+
+    header .best h1{
+        font-size: 48px;
+    }
+
+    header .best h1 span{
+        font-size: 44px;
+    }
+
+    header .best p br{
+        display: none;
+    }
+
+    header .best .discount{
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header .slider-one{
+        width: 100%;
+        max-width: 480px;
+        height: 500px;
+    }
+
+    header.main-slider .slick-dots{
+        right: 15px;
+    }
+
+    .slider .track-item{
+        font-size: 28px;
+        gap: 25px;
+    }
+
+    .services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 70px 30px;
+        gap: 30px 20px;
+    }
+
+    .services .items{
+        justify-content: flex-start;
+    }
+
+    .sec-heading{
+        margin-left: 30px;
+    }
+
+    .sec-heading h1{
+        font-size: 28px;
+    }
+
+    .Categories .banner{
+        grid-template-columns: 1fr;
+        margin: 80px 0;
+        padding: 0 30px;
+    }
+
+    .feature-products .heading-flex-container{
+        padding: 0 30px;
+    }
+
+    .feature-products .carts{
+        grid-template-columns: repeat(2, 1fr);
+        margin: 40px 30px;
+    }
+
+    .feature-products .feature-slider{
+        margin: 40px 20px;
+    }
+    .work-processing{
+        margin: 80px 0;
+        padding: 0 30px;
+    }
+
+    .work-processing .process-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trending .deal{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        margin: 80px 0;
+        padding: 50px 40px 0;
+    }
+
+    .trending .deal .data{
+        gap: 25px;
+    }
+
+    .trending .deal .data p{
+        font-size: 26px;
+    }
+
+    .trending .deal .deal-img{
+        position: static;
+        height: 380px;
+        align-self: center;
+    }
+
+    .trending .deal .deal-img img{
+        width: auto;
+        height: 100%;
+    }
+
+    .about-us{
+        flex-direction: column;
+        gap: 40px;
+        margin: 20px 0 0;
+        padding: 60px 30px;
+    }
+
+    .about-us h1{
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .arrows-con{
+        position: static;
+        margin-top: 25px;
+    }
+
+    .about-us .review{
+        width: 100%;
+    }
+
+    .about-us .review .card{
+        width: 100%;
+        margin: 0;
+    }
+
+    .blogs .sec-heading{
+        padding-top: 90px;
+    }
+
+    .blogs .container{
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0 30px;
+    }
+
+    .blogs .container .left img{
+        width: 100%;
+    }
+
+    .blogs .container .right .top .cart img{
+        width: 100%;
+    }
+
+    .subscribe{
+        margin: 70px 15px;
+        padding: 60px 40px;
+    }
+
+    .subscribe .subscribe-img{
+        opacity: 0.25;
+    }
+
+    .subscribe .shape-img{
+        display: none;
+    }
+
+    footer{
+        padding: 60px 0 30px;
+    }
+
+    footer .footer-cont{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+
+    footer .social{
+        justify-content: center;
+    }
+}
+
+
+
+@media (max-width: 768px){
+
+    header .hero-row{
+        padding: 40px 20px 50px;
+    }
+
+    header .best h3{
+        font-size: 20px;
+    }
+
+    header .best h1{
+        font-size: 38px;
+    }
+
+    header .best h1 span{
+        font-size: 34px;
+    }
+
+    header .best h1 br{
+        display: none;
+    }
+
+    header .best p{
+        font-size: 17px;
+    }
+
+    header .best .discount div h2{
+        font-size: 30px;
+    }
+
+    header .best .discount .left div h1{
+        font-size: 55px;
+    }
+
+    header .slider-one{
+        height: 420px;
+    }
+
+    header.main-slider .slick-dots{
+        display: none !important;
+    }
+
+    .slider .track-item{
+        font-size: 22px;
+        gap: 18px;
+    }
+
+    .slider .track-item i{
+        font-size: 18px;
+    }
+
+    section{
+        margin: 60px auto;
+    }
+
+    .sec-heading{
+        margin-left: 20px;
+        margin-bottom: 25px;
+    }
+
+    .sec-heading.center{
+        margin-left: 0;
+    }
+
+    .sec-heading h1{
+        font-size: 28px;
+    }
+
+    .category-slider,
+    .feature-products .feature-slider,
+    .trending .trending-items{
+        padding-top: 65px;
+    }
+
+    .feature-products .feature-slider,
+    .trending .trending-items{
+        margin-top: 0;
+    }
+
+    .category-slider .slick-arrow,
+    .trending .trending-items .slick-arrow,
+    .feature-products .feature-slider .slick-arrow{
+        top: 0;
+    }
+
+    .category-slider .slick-prev,
+    .trending .trending-items .slick-prev{
+        left: 20px;
+        right: auto;
+    }
+
+    .category-slider .slick-next,
+    .trending .trending-items .slick-next{
+        left: 75px;
+        right: auto;
+    }
+
+    .feature-products .feature-slider .slick-prev{
+        left: 0;
+        right: auto;
+    }
+
+    .feature-products .feature-slider .slick-next{
+        left: 55px;
+        right: auto;
+    }
+
+    .Categories .banner{
+        padding: 0 20px;
+        margin: 60px 0;
+    }
+
+    .Categories .banner .discount-50{
+        padding: 30px 25px;
+        height: 300px;
+    }
+
+    .Categories .banner .discount-50 .banner-content h1{
+        font-size: 40px;
+    }
+
+    .Categories .banner .discount-50 .banner-content p{
+        font-size: 18px;
+    }
+
+    .Categories .banner .discount-50 .banner-content p br{
+        display: none;
+    }
+
+    .Categories .banner .discount-50 .banner-img,
+    .Categories .banner .discount-50:last-of-type .banner-img{
+        width: 200px;
+        height: 220px;
+    }
+
+    .Categories .banner .discount-50 > img:nth-of-type(2){
+        left: auto;
+        right: 220px;
+        width: 50px;
+        height: 50px;
+        top: 25px;
+    }
+    
+    .feature-products .heading-flex-container{
+        padding: 0 20px;
+    }
+
+    .feature-products .carts{
+        margin: 30px 20px;
+    }
+
+    .feature-products .cart .cart-img-box{
+        height: 280px;
+    }
+
+    .work-processing{
+        padding: 0 20px;
+        margin: 60px 0;
+    }
+
+    .trending{
+        padding: 0 15px;
+    }
+
+    .trending .deal{
+        align-items: center;
+        text-align: center;
+        padding: 50px 25px;
+        margin: 60px 0;
+    }
+
+    .trending .deal .data{
+        align-items: center;
+        width: 100%;
+    }
+
+    .trending .deal .data div{
+        justify-content: center;
+    }
+
+    .trending .deal .data p{
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .trending .deal .data p br{
+        display: block;
+    }
+
+    .trending .deal .data .day{
+        display: grid;
+        grid-template-columns: repeat(2, 100px);
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 10px;
+    }
+
+    .trending .deal .data .day div{
+        width: 100px;
+        height: 100px;
+    }
+
+    .trending .deal .data .day h2{
+        font-size: 36px;
+    }
+
+    .trending .deal .data .day h1{
+        font-size: 16px;
+    }
+
+    .trending .deal .deal-img{
+        display: none;
+    }
+
+    .trending .trending-items .item .img-box{
+        height: 250px;
+    }
+    .about-us{
+        padding: 50px 20px;
+    }
+
+    .about-us h1 br{
+        display: none;
+    }
+
+    .about-us .review .card{
+        padding: 20px;
+    }
+
+    .about-us .review .card p{
+        font-size: 16px;
+    }
+
+    .about-us .review .card p br{
+        display: none;
+    }
+
+    .blogs .sec-heading{
+        padding-top: 60px;
+    }
+
+    .blogs .container{
+        padding: 0 20px;
+    }
+
+    .blogs .container .left h1{
+        font-size: 24px;
+    }
+
+    .blogs .container .left h1 br,
+    .blogs .container .left p br,
+    .blogs .container .right .top .cart h2 br{
+        display: none;
+    }
+
+    .blogs .container .left p{
+        font-size: 16px;
+    }
+
+    .subscribe{
+        align-items: center;
+        text-align: center;
+        padding: 50px 25px;
+    }
+
+    .subscribe .subscribe-img{
+        display: none;
+    }
+
+    .subscribe .subscribe-content{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .subscribe h2{
+        font-size: 20px;
+    }
+
+    .subscribe h1{
+        font-size: 26px;
+        margin-bottom: 50px;
+    }
+
+    .subscribe h1 br{
+        display: none;
+    }
+
+    .subscribe .subscribe-box{
+        flex-direction: column;
+        height: auto;
+        border: none;
+        background: transparent;
+        padding: 0;
+        gap: 20px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    .subscribe .subscribe-box input{
+        flex: none;
+        width: 100%;
+        height: 60px;
+        border: 1px solid #414040;
+        border-radius: 40px;
+        padding: 0 25px;
+        background: var(--white-color);
+    }
+
+    .subscribe .subscribe-box .btn{
+        height: auto;
+        margin: 0;
+        padding: 18px 40px;
+        font-size: 20px;
+    }
+
+    footer .footer-cont{
+        padding: 0 20px 30px;
+    }
+
+    footer .pesco p br{
+        display: none;
+    }
+
+    footer .footer-links-col ul{
+        gap: 20px;
+    }
+}
+
+
+
+@media (max-width: 576px){
+
+    nav .topNav{
+        padding: 12px 15px;
+    }
+
+    nav .topNav img{
+        height: 38px;
+    }
+
+    .mobile-actions button{
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    header .best h1{
+        font-size: 30px;
+    }
+
+    header .best h1 span{
+        font-size: 28px;
+        padding: 0 6px;
+    }
+
+    header .best p{
+        font-size: 15px;
+    }
+
+    header .best .discount{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    header .best .discount .line{
+        display: none;
+    }
+
+    header .slider-one{
+        height: 340px;
+        padding: 10px;
+    }
+
+    header .slider-one img:first-of-type{
+        right: 15px;
+    }
+
+    header .slider-one img:nth-of-type(2){
+        right: 40px;
+        border-radius: 35px;
+    }
+
+    .services{
+        grid-template-columns: 1fr;
+        margin: 50px 15px;
+        padding: 25px 20px;
+    }
+
+    .Categories .banner .discount-50{
+        height: 270px;
+        padding: 25px 20px;
+    }
+
+    .Categories .banner .discount-50 .banner-content h1{
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .Categories .banner .discount-50 .banner-content p{
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .Categories .banner .discount-50 .banner-img,
+    .Categories .banner .discount-50:last-of-type .banner-img{
+        width: 150px;
+        height: 180px;
+    }
+
+    .Categories .banner .discount-50 > img:nth-of-type(2){
+        display: none;
+    }
+
+    .btn{
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .feature-products .carts{
+        grid-template-columns: 1fr;
+    }
+
+    .feature-products .heading-flex-container .product-tabs{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature-products .heading-flex-container .product-tabs .tab-btn{
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .work-processing .process-grid{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .trending .deal{
+        padding: 40px 20px;
+    }
+
+    .trending .deal .data p{
+        font-size: 26px;
+    }
+
+    .trending .deal .data .day{
+        grid-template-columns: repeat(2, 90px);
+    }
+
+    .trending .deal .data .day div{
+        width: 90px;
+        height: 90px;
+    }
+
+    .trending .deal .data .day h2{
+        font-size: 30px;
+    }
+
+    .trending .deal .data .day h1{
+        font-size: 14px;
+    }
+
+    .blogs .container .right .top{
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .subscribe h1{
+        font-size: 22px;
+    }
+
+    .subscribe .subscribe-box input{
+        font-size: 15px;
+        min-width: 0;
+    }
+
+    footer .footer-cont{
+        grid-template-columns: 1fr;
+    }
+
+    footer .social img{
+        max-width: 100%;
+    }
+
+    .back-to-top{
+        right: 15px;
+        bottom: 15px;
+    }
+    
+@media (max-width: 768px){
+
+    .category-slider .category-item .cat-img{
+        width: 100%;
+        max-width: 290px;
+        height: 310px;
+    }
+
+    .Categories .banner .discount-50{
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 35px 25px 0;
+    }
+
+    .Categories .banner .discount-50 .banner-content{
+        width: 100%;
+    }
+
+    .Categories .banner .discount-50 .banner-content p{
+        margin-bottom: 20px;
+    }
+
+    .Categories .banner .discount-50 .banner-img,
+    .Categories .banner .discount-50:last-of-type .banner-img{
+        position: relative;
+        right: auto;
+        bottom: auto;
+        align-self: center;
+        width: 100%;
+        max-width: 280px;
+        height: 280px;
+        margin-top: 25px;
+    }
+
+    .Categories .banner .discount-50 > img:nth-of-type(2){
+        display: block;
+        top: 25px;
+        right: 25px;
+        left: auto;
+    }
+}
+}
